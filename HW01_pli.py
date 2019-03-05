@@ -4,7 +4,6 @@
 @Date: 2019-01-25 23:54:31
 '''
 
-
 import math
 
 
@@ -18,22 +17,23 @@ def classify_triangle(a, b, c):
 
     lines = [a, b, c]
     lines.sort()
-    if  type(a) not in (float,int) or type(b) not in (float,int) or type(c) not in (float,int):
+    if type(a) not in (float, int) or type(b) not in (
+            float, int) or type(c) not in (float, int):
         raise TypeError("Only enter number")
-        
-    elif a<=0 or b<=0 or c<=0:
+
+    elif a <= 0 or b <= 0 or c <= 0:
         raise ValueError("length > 0")
-        
+
     else:
         a, b, c = lines[0], lines[1], lines[2]
     # the sum of any two length > the third
-    
-    if a+b > c:
-        if c**2 == a**2+b**2 and a == b:
+
+    if a + b > c:
+        if round(c**2, 2) == round(a**2 + b**2, 2) and a == b:
             m1 = "It is a isoscele triangle and a right triangle as well!"
             print(m1)
             return m1
-        elif c**2 == a**2+b**2 and a != b:
+        elif c**2 == a**2 + b**2 and a != b:
             m2 = "It is a right triangle!"
             print(m2)
             return m2
@@ -54,7 +54,7 @@ def classify_triangle(a, b, c):
         print(m6)
         return m6
 
-
+'''
 def main():
     lines = []
     # enter 3 number as length of triangle
@@ -62,7 +62,7 @@ def main():
         # check valid enter
         try:
             x = float(input("Please enter a number: "))
-        except:
+        except TypeError:
             m7 = "Please double check the enter"
             print(m7)
         else:
@@ -74,4 +74,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()'''
